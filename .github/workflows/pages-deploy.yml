@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Adjust if using a different branch
+      - main  # Change this if you are using a different branch
 
 jobs:
   deploy:
@@ -11,10 +11,10 @@ jobs:
 
     steps:
     - name: Checkout the repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3  # Updated to version 3
 
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4  # Updated to version 4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./   # This assumes your HTML files are in the root of the repository
+        publish_dir: ./  # Adjust if your files are in a different folder
