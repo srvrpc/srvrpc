@@ -37,34 +37,15 @@ header h1 {
 
 /* Wikipedia-style navigation */
 nav {
-    margin: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 20px; /* Space between the navigation items */
+    padding: 15px 0;
 }
 
-/* Navigation list styling */
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin-right: 15px;
-}
-
-/* Navigation links */
-nav ul li a {
-    font-size: 13px;
+nav a {
+    font-size: 14px;
     color: #0645ad;
-    padding: 5px;
-}
-
-nav ul li a:hover {
-    background-color: #f8f9fa;
-    border: 1px solid #a2a9b1;
-    text-decoration: underline;
 }
 
 /* Main content layout using flexbox */
@@ -76,21 +57,21 @@ nav ul li a:hover {
 
 /* Wikipedia-style left sidebar */
 #left-sidebar {
-    width: 20%;
+    width: 25%; /* Adjust width for a better fit */
     padding-right: 20px;
     border-right: 1px solid #a2a9b1; /* Light border to separate sections */
 }
 
 /* Wikipedia-style right sidebar */
 #right-sidebar {
-    width: 20%;
+    width: 25%; /* Adjust width for a better fit */
     padding-left: 20px;
     border-left: 1px solid #a2a9b1; /* Light border to separate sections */
 }
 
 /* Center content layout */
 #center-content {
-    width: 60%;
+    width: 50%; /* Adjust width for a better fit */
     text-align: center;
 }
 
@@ -142,15 +123,6 @@ ul li {
     margin-bottom: 10px;
 }
 
-/* Wikipedia-style lists in sidebars */
-#left-sidebar ul, #right-sidebar ul {
-    padding-left: 20px;
-}
-
-#left-sidebar ul li, #right-sidebar ul li {
-    font-size: 14px;
-}
-
 /* Media query for smaller screens (mobile responsiveness) */
 @media (max-width: 768px) {
     #main-content {
@@ -168,13 +140,4 @@ ul li {
         flex-direction: column;
         align-items: center;
     }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin-bottom: 10px;
-    }
 }
-
