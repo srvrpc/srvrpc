@@ -3,28 +3,19 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Adjust if your default branch is different
+      - main  # Adjust if using a different branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Checkout the repository
     - name: Checkout the repository
       uses: actions/checkout@v3
 
-    # Step 2: Deploy to GitHub Pages
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./  # Assuming your HTML files are in the root directory
-
-    # Step 3: Force cache reset if necessary
-    - name: Force cache reset for GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./  # Adjust if files are in a different folder
-        keep_files: false  # Forces the action to delete the old files and push new ones
+        publish_dir: ./   # Assuming your files are in the root directory
+        keep_files: false  # Ensures the old files are removed
