@@ -18,23 +18,37 @@
             flex-direction: column;
         }
 
-        /* Floating header styling */
+        /* Floating header styling with Flexbox */
         header {
             position: fixed;
             top: 0;
             width: 100%;
             background-color: #f8f9fa;
             border-bottom: 1px solid #a2a9b1;
-            padding: 15px 0;
+            padding: 15px;
             z-index: 1000;
-            text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* Title inside the header */
+        /* Left navigation links */
+        .nav-left {
+            display: flex;
+        }
+
+        /* Right navigation links */
+        .nav-right {
+            display: flex;
+        }
+
+        /* Title inside the header, centered */
         header h1 {
             font-size: 1.75em;
             margin: 0;
+            text-align: center;
+            flex-grow: 1; /* Let it take the remaining space */
         }
 
         /* Make the title clickable */
@@ -44,15 +58,11 @@
         }
 
         /* Navigation styling */
-        nav {
-            margin-top: 10px;
-        }
-
         nav ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
-            display: inline-flex;
+            display: flex;
         }
 
         nav ul li {
@@ -74,15 +84,25 @@
 </head>
 <body>
     <header>
+        <div class="nav-left">
+            <nav>
+                <ul>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="music.html">My Music</a></li>
+                </ul>
+            </nav>
+        </div>
+
         <h1><a href="index.html">Sreerama Varma Raja P C</a></h1>
-        <nav>
-            <ul>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="music.html">My Music</a></li>
-                <li><a href="journey.html">My Journey</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+
+        <div class="nav-right">
+            <nav>
+                <ul>
+                    <li><a href="journey.html">My Journey</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <div class="empty-space"></div> <!-- Empty body content -->
