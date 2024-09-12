@@ -33,22 +33,26 @@
             align-items: center;
         }
 
-        /* Left navigation links */
-        .nav-left {
+        /* Flex container for the navigation and title */
+        .nav-container {
             display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
         }
 
-        /* Right navigation links */
-        .nav-right {
+        /* Left and right navigation links */
+        .nav-left, .nav-right {
             display: flex;
+            gap: 20px; /* Space between the links */
         }
 
-        /* Title inside the header, centered */
+        /* Title styling */
         header h1 {
             font-size: 1.75em;
             margin: 0;
+            flex-grow: 1; /* Let the title take the space in between */
             text-align: center;
-            flex-grow: 1; /* Let it take the remaining space */
         }
 
         /* Make the title clickable */
@@ -57,7 +61,7 @@
             text-decoration: none;
         }
 
-        /* Navigation styling */
+        /* Navigation link styling */
         nav ul {
             list-style-type: none;
             padding: 0;
@@ -66,7 +70,7 @@
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin: 0;
         }
 
         nav ul li a {
@@ -75,33 +79,40 @@
             font-weight: bold;
         }
 
+        /* Add padding to the outermost left and right for balance */
+        .nav-left, .nav-right {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
         /* Empty body space */
         .empty-space {
             flex-grow: 1; /* Fills the remaining space under the header */
         }
-
     </style>
 </head>
 <body>
     <header>
-        <div class="nav-left">
-            <nav>
-                <ul>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="music.html">My Music</a></li>
-                </ul>
-            </nav>
-        </div>
+        <div class="nav-container">
+            <div class="nav-left">
+                <nav>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="music.html">My Music</a></li>
+                    </ul>
+                </nav>
+            </div>
 
-        <h1><a href="index.html">Sreerama Varma Raja P C</a></h1>
+            <h1><a href="index.html">Sreerama Varma Raja P C</a></h1>
 
-        <div class="nav-right">
-            <nav>
-                <ul>
-                    <li><a href="journey.html">My Journey</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+            <div class="nav-right">
+                <nav>
+                    <ul>
+                        <li><a href="journey.html">My Journey</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
