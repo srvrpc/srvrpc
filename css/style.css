@@ -1,143 +1,85 @@
-/* Wikipedia-style body */
+/* General body styling */
 body {
-    font-family: "Linux Libertine", "Georgia", "Times New Roman", serif;
-    background-color: #ffffff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: white;
     margin: 0;
     padding: 0;
-    color: #222222;
-    font-size: 14px;
-    line-height: 1.6;
+    color: #202122;
+    height: 100vh; /* Full height */
+    display: flex;
+    flex-direction: column;
 }
 
-/* Wikipedia-style links */
-a {
-    color: #0645ad;
+/* Floating header styling */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #a2a9b1;
+    padding: 15px;
+    z-index: 1000;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Title in the header */
+header h1 {
+    font-size: 1.75em;
+    margin: 0;
+}
+
+/* Make the title clickable */
+header h1 a {
+    color: #000000;
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
-/* Header styling */
-header {
-    background-color: #f8f9fa; /* Light gray header */
-    border-bottom: 1px solid #a2a9b1; /* Light border below the header */
-    padding: 10px 0;
-    text-align: center;
-}
-
-/* Header title styling */
-header h1 {
-    font-size: 1.75em;
-    font-weight: bold;
-    margin: 0;
-    color: #000000; /* Wikipedia's black header text */
-}
-
-/* Wikipedia-style navigation */
+/* Navigation styling below the title */
 nav {
-    display: flex;
+    margin-top: 10px;
+    display: inline-flex;
     justify-content: center;
-    gap: 20px; /* Space between the navigation items */
-    padding: 15px 0;
+    gap: 20px; /* Space between the buttons */
 }
 
-nav a {
-    font-size: 14px;
-    color: #0645ad;
-}
-
-/* Main content layout using flexbox */
-#main-content {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px;
-}
-
-/* Wikipedia-style left sidebar */
-#left-sidebar {
-    width: 25%; /* Adjust width for a better fit */
-    padding-right: 20px;
-    border-right: 1px solid #a2a9b1; /* Light border to separate sections */
-}
-
-/* Wikipedia-style right sidebar */
-#right-sidebar {
-    width: 25%; /* Adjust width for a better fit */
-    padding-left: 20px;
-    border-left: 1px solid #a2a9b1; /* Light border to separate sections */
-}
-
-/* Center content layout */
-#center-content {
-    width: 50%; /* Adjust width for a better fit */
-    text-align: center;
-}
-
-/* Center content heading */
-#center-content h2 {
-    font-size: 1.75em;
-    font-weight: bold;
-    color: #000000;
-}
-
-/* Center content paragraph */
-#center-content p {
-    font-size: 1.2em;
-    color: #222222;
-}
-
-/* Sidebar headings */
-#left-sidebar h2, #right-sidebar h2 {
-    font-size: 1.25em;
-    color: #0645ad;
-    border-bottom: 1px solid #a2a9b1;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-}
-
-/* Sidebar content */
-#left-sidebar p, #right-sidebar p {
-    margin-bottom: 15px;
-}
-
-/* Footer styling */
-footer {
-    background-color: #f8f9fa;
-    border-top: 1px solid #a2a9b1;
-    padding: 10px;
-    text-align: center;
-    font-size: 12px;
-    color: #555555;
-}
-
-/* Wikipedia-style unordered lists */
-ul {
+nav ul {
+    list-style-type: none;
     padding: 0;
     margin: 0;
-    list-style-type: none;
+    display: inline-flex;
 }
 
-ul li {
-    margin-bottom: 10px;
+nav ul li {
+    margin: 0;
 }
 
-/* Media query for smaller screens (mobile responsiveness) */
+nav ul li a {
+    text-decoration: none;
+    color: #0645ad;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Empty body space */
+.empty-space {
+    margin-top: 100px; /* Adjust this if your header height is different */
+    flex-grow: 1;
+}
+
+/* Mobile responsiveness */
 @media (max-width: 768px) {
-    #main-content {
-        flex-direction: column;
-        margin: 0;
-    }
-
-    #left-sidebar, #right-sidebar, #center-content {
-        width: 100%;
+    header {
         padding: 10px;
-        border: none;
     }
 
-    nav {
+    nav ul {
         flex-direction: column;
         align-items: center;
+        gap: 10px;
+    }
+
+    .empty-space {
+        margin-top: 120px; /* Adjust as needed for mobile screens */
     }
 }
