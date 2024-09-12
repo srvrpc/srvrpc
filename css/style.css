@@ -76,22 +76,6 @@ nav ul li a {
     nav ul {
         flex-direction: column;
         align-items: center;
-        gap: 10px;
-    }
-
-    .empty-space {
-        margin-top: 120px; /* Adjust as needed for mobile screens */
-    }
-}
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    header {
-        padding: 10px;
-    }
-
-    nav ul {
-        flex-direction: column; /* Stack nav items vertically on mobile */
-        align-items: center;
         gap: 15px; /* Increased space between items */
     }
 
@@ -107,6 +91,7 @@ nav ul li a {
         font-size: 1.5em; /* Reduce title size on mobile */
     }
 }
+
 /* Hero Section */
 #hero {
     display: flex;
