@@ -31,7 +31,7 @@ header h1 {
 
 /* Make the title clickable */
 header h1 a {
-    color: #000000;
+    color: #0645ad;
     text-decoration: none;
 }
 
@@ -61,37 +61,6 @@ nav ul li a {
     font-size: 16px;
 }
 
-/* Empty body space */
-.empty-space {
-    margin-top: 100px; /* Adjust this if your header height is different */
-    flex-grow: 1;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    header {
-        padding: 10px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px; /* Increased space between items */
-    }
-
-    nav ul li a {
-        font-size: 14px; /* Slightly smaller font for mobile */
-    }
-
-    .empty-space {
-        margin-top: 140px; /* Adjust space based on header size */
-    }
-
-    h1 a {
-        font-size: 1.5em; /* Reduce title size on mobile */
-    }
-}
-
 /* Hero Section */
 #hero {
     display: flex;
@@ -99,8 +68,7 @@ nav ul li a {
     justify-content: space-between;
     padding: 40px;
     background-color: #f8f9fa;
-    height: 80vh;
-    flex-wrap: wrap; /* Allows wrapping for small screens */
+    height: 80vh; /* Takes up a good portion of the viewport height */
 }
 
 .hero-container {
@@ -115,6 +83,7 @@ nav ul li a {
 .hero-text {
     flex: 1;
     padding-right: 20px;
+    text-align: left; /* Left-align the tagline */
 }
 
 .hero-text h1 {
@@ -134,4 +103,24 @@ nav ul li a {
     width: auto; /* Ensure it doesn't stretch on mobile */
     border-radius: 50%; /* Make the image round */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    #hero {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .hero-text {
+        flex-basis: 50%; /* Allow the text to cover half the screen */
+        padding-right: 10px;
+    }
+
+    .hero-image img {
+        max-width: 200px;
+        flex-basis: 50%; /* Ensure the image takes up half the screen */
+    }
 }
