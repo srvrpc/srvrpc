@@ -58,7 +58,8 @@ nav ul li a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 60px 40px 40px; /* Adds space above the hero section */
+    padding: 0 60px; /* Added left and right padding */
+    height: calc(100vh - 70px); /* Full screen minus header height */
     background-color: #f8f9fa;
 }
 
@@ -75,6 +76,7 @@ nav ul li a {
     flex: 1;
     text-align: left;
     padding-right: 40px;
+    font-size: 2em; /* Increased font size */
 }
 
 .hero-image {
@@ -84,10 +86,27 @@ nav ul li a {
 }
 
 .hero-image img {
-    max-width: 250px;
+    max-width: 500px; /* Increased image size */
     width: auto;
-    /* Removed the border-radius for a non-circular image */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    #hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        padding-right: 0;
+        margin-bottom: 20px;
+        font-size: 1.5em; /* Adjust font size on mobile */
+    }
+
+    .hero-image img {
+        max-width: 250px; /* Adjust image size on mobile */
+    }
 }
 
 
