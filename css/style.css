@@ -1,190 +1,143 @@
-/* Apply margin and padding to the body for the entire website */
+/* General body styling (fixed across all pages)
+   Applies to: All pages (index.html, blog.html, music.html, journey.html, contact.html)
+   This defines the layout, font, and overall appearance for the entire site.
+*/
 body {
-    margin: 0;
-    padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #FFFFFF;
-    color: #252525;
-}
-
-/* Main content area with margin */
-main {
-    margin: 20px auto;  /* Adds margin to the top and bottom, centers horizontally */
-    max-width: 960px;    /* Restricts the content width to 960px */
-    padding: 20px;       /* Adds internal padding to the content */
-}
-
-/* General body styling */
-body {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: #FFFFFF;
+    background-color: white;
     margin: 0;
     padding: 0;
-    color: #252525;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 10px;
-}
-
-/* Headings styling */
-h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 2em;
-    color: #000000;
-    font-weight: bold;
-    margin-bottom: 30px;
-}
-
-h2 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.5em;
-    color: #000000;
-    font-weight: bold;
-    border-bottom: 1px solid lightgrey;
-    margin-bottom: 20px;
-}
-
-h3 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.17em;
-    color: #000000;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-h4 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em;
-    color: #000000;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-h5 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.83em;
-    color: #000000;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-h6 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.75em;
-    color: #000000;
-    font-weight: bold;
-    margin-bottom: 6px;
-}
-
-/* Link styling */
-a {
-    color: #0645AD;
-    text-decoration: none;
-}
-
-a:visited {
-    color: #0B0080;
-}
-
-a:hover, a:active {
-    color: #FF6200;
-    background-color: #EEEEEE;
-}
-
-/* Header styling */
-header {
-    height: 50px;
-    background-color: #F8F9FA;
-    border-bottom: 1px solid #A7D7F9;
+    color: #202122;
+    height: 100vh; /* Full height */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    position: sticky;
+    flex-direction: column;
+}
+
+/* Header styling (fixed across all pages)
+   Applies to: All pages
+   This section handles the sticky header, ensuring it stays at the top of the viewport on all pages.
+*/
+header {
+    position: fixed;
     top: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #a2a9b1;
+    padding: 15px;
     z-index: 1000;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-size: 24px;
+    font-size: 1.75em;
     margin: 0;
 }
 
-header nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-}
-
-header nav ul li a {
-    font-size: 16px;
-    color: #0645AD;
-    font-weight: bold;
-}
-
-/* Image styling */
-img {
-    max-width: 250px;
-    height: auto;
-}
-
-/* Buttons */
-button {
-    border: 1px solid #A7D7F9;
-    background-color: #F8F9FA;
+/* Header title link 
+   Applies to: All pages 
+   Styles the clickable title in the header. 
+*/
+header h1 a {
     color: #000000;
-    padding: 5px 10px;
-    border-radius: 5px;
+    text-decoration: none;
 }
 
-button:hover {
-    background-color: #EEF6FF;
+/* Navigation bar styling 
+   Applies to: All pages
+   Styles the navigation menu below the header, ensuring it's centered and responsive.
+*/
+nav {
+    margin-top: 10px;
+    display: inline-flex;
+    justify-content: center;
+    gap: 20px; /* Space between navigation links */
 }
 
-/* Hero Section */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+}
+
+nav ul li {
+    margin: 0 20px; /* Space between each navigation item */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #0645ad;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Empty body space filler 
+   Applies to: All pages 
+   Fills any remaining vertical space in the layout under the header.
+*/
+.empty-space {
+    flex-grow: 1;
+}
+
+/* Blog content area styling 
+   Applies to: blog.html
+   Styles the main content area for the blog page, including padding for readability.
+*/
+#blog-contents {
+    margin: 20px auto;
+    max-width: 960px;
+    padding: 20px;
+}
+
+/* Hero section styling 
+   Applies to: index.html
+   Styles the homepage's hero section with a large left-aligned tagline and a right-aligned profile image.
+*/
 #hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: calc(100vh - 60px); /* Full screen minus header */
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 100px 60px 0 60px; /* Padding for the top */
+    height: calc(100vh - 70px); /* Full screen minus header height */
+    background-color: #ffffff;
 }
 
 .hero-text {
-    font-size: 200%;
+    flex: 1;
+    text-align: left;
+    padding-right: 40px;
+    font-size: 2.5em; /* Large font for tagline */
 }
 
 .hero-image {
+    flex: 1;
     text-align: right;
+    margin-left: 20px;
 }
 
-/* Responsive design */
-@media (max-width: 1024px) {
-    body {
-        padding: 10px;
-    }
+.hero-image img {
+    max-width: 500px; /* Restricts profile image size */
+    width: auto;
 }
 
+/* Mobile responsiveness for the hero section 
+   Applies to: index.html
+   Makes the hero section responsive, adjusting font and image sizes on smaller screens.
+*/
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
     #hero {
-        flex-direction: column;
+        flex-direction: column; /* Stacks text and image vertically */
         text-align: center;
     }
 
-    .hero-image, .hero-text {
-        width: 100%;
-        padding: 0;
+    .hero-text {
+        padding-right: 0;
+        margin-bottom: 20px;
+        font-size: 1.5em; /* Smaller font for mobile */
     }
 
-    img {
-        max-width: 100%;
+    .hero-image img {
+        max-width: 250px; /* Smaller image for mobile */
     }
 }
