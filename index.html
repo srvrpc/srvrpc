@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="icon" href="assets/images/favicon.png" type="image/png">
     <meta charset="UTF-8">
@@ -74,8 +75,64 @@
         .empty-space {
             flex-grow: 1; /* Fills the remaining space under the header */
         }
+
+        /* Hero Section */
+        #hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 100px 60px 0 60px; /* Padding with more space above */
+            height: calc(100vh - 70px); /* Full screen minus header height */
+            background-color: #ffffff;
+        }
+
+        .hero-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-text {
+            flex: 1;
+            text-align: left;
+            padding-right: 40px;
+            font-size: 2.5em; /* Increased font size */
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: right;
+            margin-left: 20px;
+        }
+
+        .hero-image img {
+            max-width: 500px; /* Increased image size */
+            width: auto;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            #hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 20px;
+                font-size: 1.5em; /* Adjust font size on mobile */
+            }
+
+            .hero-image img {
+                max-width: 250px; /* Adjust image size on mobile */
+            }
+        }
     </style>
 </head>
+
 <body>
     <header>
         <h1><a href="index.html">Sreerama Varma Raja P C</a></h1>
@@ -89,19 +146,20 @@
         </nav>
     </header>
 
-  <!-- Hero Section -->
-<section id="hero">
-    <div class="hero-container" style="display: flex; justify-content: space-between; align-items: center; padding-top: 60px;">
-        <!-- Left: Tagline -->
-        <div class="hero-text" style="flex: 1; text-align: left; padding-right: 20px;">
-            <h1>I apply the scientific method to digital marketing that matters.</h1>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-container">
+            <!-- Left: Tagline -->
+            <div class="hero-text">
+                <h1>I apply the scientific method to digital marketing that matters.</h1>
+            </div>
+
+            <!-- Right: Profile Image -->
+            <div class="hero-image">
+                <img src="assets/images/profile.webp" alt="Sreerama Varma Raja P C">
+            </div>
         </div>
-        
-        <!-- Right: Profile Image -->
-        <div class="hero-image" style="flex: 1; text-align: right;">
-            <img src="assets/images/profile.webp" alt="Sreerama Varma Raja P C" style="max-width: 250px; width: auto;">
-        </div>
-    </div>
-</section>
+    </section>
 </body>
+
 </html>
