@@ -1,41 +1,100 @@
 /* General body styling */
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: white;
-    margin: auto;
-    padding: 100px;
-    color: #202122;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    color: #252525;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 10px;
 }
 
-/* Restoring the header based on user's preference */
+/* Headings styling */
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    color: #000000;
+    font-weight: bold;
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.17em;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h5 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.83em;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+h6 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.75em;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+/* Link styling */
+a {
+    color: #0645AD;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #0B0080;
+}
+
+a:hover, a:active {
+    color: #FF6200;
+    background-color: #EEEEEE;
+}
+
+/* Header styling */
 header {
+    height: 50px;
+    background-color: #F8F9FA;
+    border-bottom: 1px solid #A7D7F9;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #a2a9b1;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-/* Title styling for the header */
 header h1 {
-    font-size: 1.8em;
+    font-size: 24px;
     margin: 0;
-    font-weight: bold;
 }
 
-/* Make the title clickable */
-header h1 a {
-    text-decoration: none;
-    color: #000;
-}
-
-/* Navigation links in the header */
-nav ul {
+header nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -43,14 +102,29 @@ nav ul {
     gap: 20px;
 }
 
-nav ul li {
-    display: inline;
+header nav ul li a {
+    font-size: 16px;
+    color: #0645AD;
+    font-weight: bold;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #0645ad;
-    font-size: 1.1em;
+/* Image styling */
+img {
+    max-width: 250px;
+    height: auto;
+}
+
+/* Buttons */
+button {
+    border: 1px solid #A7D7F9;
+    background-color: #F8F9FA;
+    color: #000000;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #EEF6FF;
 }
 
 /* Hero Section */
@@ -58,71 +132,43 @@ nav ul li a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 60px; /* Added left and right padding */
-    height: calc(100vh - 70px); /* Full screen minus header height */
-    background-color: #f8f9fa;
-}
-
-.hero-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    height: calc(100vh - 60px); /* Full screen minus header */
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .hero-text {
-    flex: 1;
-    text-align: left;
-    padding-right: 40px;
-    font-size: 2em; /* Increased font size */
+    font-size: 200%;
 }
 
 .hero-image {
-    flex: 1;
     text-align: right;
-    margin-left: 20px;
 }
 
-.hero-image img {
-    max-width: 500px; /* Increased image size */
-    width: auto;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+/* Responsive design */
+@media (max-width: 1024px) {
+    body {
+        padding: 10px;
+    }
 }
 
-/* Mobile responsiveness */
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     #hero {
         flex-direction: column;
         text-align: center;
     }
 
-    .hero-text {
-        padding-right: 0;
-        margin-bottom: 20px;
-        font-size: 1.5em; /* Adjust font size on mobile */
+    .hero-image, .hero-text {
+        width: 100%;
+        padding: 0;
     }
 
-    .hero-image img {
-        max-width: 250px; /* Adjust image size on mobile */
-    }
-}
-
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    #hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-text {
-        margin-bottom: 20px;
-        padding-right: 0;
-    }
-
-    .hero-image img {
-        max-width: 200px; /* Reduce image size for mobile */
+    img {
+        max-width: 100%;
     }
 }
