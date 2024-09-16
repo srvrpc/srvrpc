@@ -28,25 +28,36 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Blog post styling */
-#blog-posts ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-#blog-posts li {
-    margin-bottom: 15px;
-    font-size: 1.1em;
-}
-
-#blog-posts li a {
-    text-decoration: none;
-    color: #0645AD;
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.17em;
+    color: #000000;
     font-weight: bold;
+    margin-bottom: 15px;
 }
 
-#blog-posts li a:hover {
-    color: #FF6200;
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h5 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.83em;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+h6 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.75em;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 6px;
 }
 
 /* Link styling */
