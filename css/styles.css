@@ -58,56 +58,26 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Hero section styling */
-#hero {
-    padding: 140px 20px 20px 20px; /* Adjust padding to account for fixed header */
-    background-color: #FFFFFF;
-}
-
-.hero-container {
-    max-width: 960px;
-    margin: 0 auto;
-    display: flex;
-    align-items: flex-start;
-}
-
-.hero-text {
-    flex: 1;
-    padding-right: 20px;
-    font-size: 1.2em;
-    color: #202122;
-}
-
-.hero-text h1 {
-    font-size: 1.8em;
-    margin-bottom: 0.5em;
-}
-
-.hero-text p {
-    margin-top: 0;
-}
-
-.hero-image {
-    flex: 0 0 250px;
-}
-
-.hero-image img {
-    max-width: 100%;
-    height: auto;
-    border: 1px solid #A2A9B1;
-}
-
-/* Empty space filler */
-.empty-space {
-    flex-grow: 1;
-}
-
 /* Content area styling */
 main {
     max-width: 960px;
-    margin: 0 auto;
+    margin: 80px auto 0 auto; /* Adjusted top margin to account for fixed header */
     padding: 20px;
     background-color: #FFFFFF;
+}
+
+/* Center-align the post title */
+.post-title {
+    text-align: center;
+    margin-top: 0;
+}
+
+/* Post date styling */
+.post-date {
+    text-align: center;
+    font-size: 0.9em;
+    color: #555555;
+    margin-bottom: 1em;
 }
 
 /* Typography */
@@ -149,51 +119,7 @@ a:hover {
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .hero-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .hero-text {
-        padding-right: 0;
-    }
-
-    .hero-image {
-        margin-top: 20px;
-    }
-
     nav ul li {
         margin: 0 10px;
     }
-}
-
-/* Blog Page Styling */
-/* List styling in blog page */
-#blog-contents ul {
-    list-style-type: disc; /* Use disc bullets, similar to Wikipedia */
-    padding-left: 20px;    /* Indent the list */
-}
-
-#blog-contents li {
-    margin-bottom: 0.5em;  /* Space between list items */
-}
-
-/* Ensure blog contents are properly aligned */
-#blog-contents {
-    max-width: 800px; /* Adjust as needed */
-    margin: 0 auto;   /* Center the content */
-}
-/* Blog Post Styling */
-.post-date {
-    font-size: 0.9em;
-    color: #555555;
-    margin-bottom: 1em;
-}
-
-.post-image {
-    max-width: 100%;
-    height: auto;
-    margin: 1em 0;
-    border: 1px solid #A2A9B1;
 }
