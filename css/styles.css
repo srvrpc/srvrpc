@@ -88,7 +88,7 @@ nav ul li a:hover {
 }
 
 .hero-image {
-    flex: 0 0 250px;
+    flex: 0 0 375px; /* Increased width by 50% */
 }
 
 .hero-image img {
@@ -175,6 +175,7 @@ a:hover {
 
     .hero-image {
         margin-top: 20px;
+        flex: 0 0 auto; /* Allow the image to adjust naturally on mobile */
     }
 
     nav ul li {
