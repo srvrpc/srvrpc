@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://srvrpc.com/sitemap.xml
