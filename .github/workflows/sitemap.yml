@@ -1,0 +1,27 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches:
+      - main  # or your default branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Generate Sitemap
+      uses: simplyhexagonal/gh-action-generate-sitemap@master
+      with:
+        BASE_URL: 'https://srvrpc.com'
+        OUTPUT_PATH: 'sitemap.xml'
+
+    - name: Commit Sitemap
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add sitemap.xml
+        git commit -m "Auto-generate sitemap"
+        git push
