@@ -17,10 +17,11 @@ jobs:
 
       # Step 2: Generate the sitemap
       - name: Generate Sitemap
-        uses: cycjimmy/sitemap-generator-action@v0.2.3
+        uses: cicirello/generate-sitemap@v1.10.1
         with:
-          baseUrl: 'https://srvrpc.com'
-          outputDir: '.'
+          starting-url: 'https://srvrpc.com'
+          sitemap-path: 'sitemap.xml'
+          options: '--pretty-print'
 
       # Step 3: Commit and push the sitemap.xml file
       - name: Commit sitemap.xml
