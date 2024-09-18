@@ -167,3 +167,20 @@ a:hover {
         margin: 0 10px;
     }
 }
+
+/* Blog Page Styling */
+/* List styling in blog page */
+#blog-contents ul {
+    list-style-type: disc; /* Use disc bullets, similar to Wikipedia */
+    padding-left: 20px;    /* Indent the list */
+}
+
+#blog-contents li {
+    margin-bottom: 0.5em;  /* Space between list items */
+}
+
+/* Ensure blog contents are properly aligned */
+#blog-contents {
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto;   /* Center the content */
+}
