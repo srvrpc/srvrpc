@@ -19,9 +19,11 @@ jobs:
       - name: Generate Sitemap
         uses: cicirello/generate-sitemap@v1.10.1
         with:
-          entryPoint: 'https://srvrpc.com'
           path-to-root: './'
+          entry-point: 'index.html'
+          base-url-path: 'https://srvrpc.com/'
           include-html: true
+          include-pdf: false
           sitemap-format: 'xml'
           args: '--output-folder . --sitemap-filename sitemap.xml'
 
