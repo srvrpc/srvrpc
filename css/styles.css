@@ -1,123 +1,169 @@
-/* General body styling (fixed across all pages)
-   Applies to: All pages (index.html, blog.html, music.html, journey.html, contact.html)
-   This defines the layout, font, and overall appearance for the entire site.
-*/
+/* General body styling */
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: white;
+    background-color: #FFFFFF;
     margin: 0;
     padding: 0;
     color: #202122;
-    height: 100vh; /* Full height */
-    display: flex;
-    flex-direction: column;
+    line-height: 1.6;
 }
 
-/* Header styling (fixed across all pages)
-   Applies to: All pages
-   This section handles the sticky header, ensuring it stays at the top of the viewport on all pages.
-*/
+/* Header styling */
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #a2a9b1;
-    padding: 15px;
+    background-color: #F8F9FA; /* Light gray background */
+    border-bottom: 1px solid #A2A9B1; /* Light gray border */
+    padding: 10px;
     z-index: 1000;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-size: 1.75em;
+    font-size: 1.6em;
     margin: 0;
+    font-weight: normal;
 }
 
-/* Header title link 
-   Applies to: All pages 
-   Styles the clickable title in the header. 
-*/
 header h1 a {
     color: #000000;
     text-decoration: none;
 }
 
-/* Navigation bar styling 
-   Applies to: All pages
-   Styles the navigation menu below the header, ensuring it's centered and responsive.
-*/
+/* Navigation bar styling */
 nav {
-    margin-top: 10px;
-    display: inline-flex;
-    justify-content: center;
-    gap: 20px; /* Space between navigation links */
+    margin-top: 5px;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
-    display: inline-flex;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    margin: 0 20px; /* Space between each navigation item */
+    margin: 0 15px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #0645ad;
-    font-weight: bold;
-    font-size: 16px;
+    color: #0645AD; /* Wikipedia link blue */
+    font-size: 14px;
 }
 
-/* Empty body space filler 
-   Applies to: All pages 
-   Fills any remaining vertical space in the layout under the header.
-*/
-.empty-space {
-    flex-grow: 1;
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
-/* Blog content area styling 
-   Applies to: blog.html
-   Styles the main content area for the blog page, including padding for readability.
-*/
-#blog-contents {
-    margin: 20px auto;
-    max-width: 960px;
-    padding: 20px;
-}
-
-/* Hero section styling 
-   Applies to: index.html
-   Styles the homepage's hero section with a large left-aligned tagline and a right-aligned profile image.
-*/
+/* Hero section styling */
 #hero {
+    padding: 140px 20px 20px 20px; /* Adjust padding to account for fixed header */
+    background-color: #FFFFFF;
+}
+
+.hero-container {
+    max-width: 960px;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 100px 60px 0 60px; /* Padding for the top */
-    height: calc(100vh - 70px); /* Full screen minus header height */
-    background-color: #ffffff;
+    align-items: flex-start;
 }
 
 .hero-text {
     flex: 1;
-    text-align: left;
-    padding-right: 40px;
-    font-size: 2.5em; /* Large font for tagline */
+    padding-right: 20px;
+    font-size: 1.2em;
+    color: #202122;
+}
+
+.hero-text h1 {
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+}
+
+.hero-text p {
+    margin-top: 0;
 }
 
 .hero-image {
-    flex: 1;
-    text-align: right;
-    margin-left: 20px;
+    flex: 0 0 250px;
 }
 
 .hero-image img {
-    max-width: 100%; /* Ensures the image scales down responsively */
-    height: auto; /* Keeps the aspect ratio */
-    max-height: 500px; /* Limits the height to avoid oversized images */
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #A2A9B1;
+}
+
+/* Empty space filler */
+.empty-space {
+    flex-grow: 1;
+}
+
+/* Content area styling */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: #202122;
+    font-weight: normal;
+    margin: 1em 0 0.5em;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+p {
+    margin: 0 0 1em;
+}
+
+/* Links */
+a {
+    color: #0645AD;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #0B0080; /* Wikipedia visited link purple */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-text {
+        padding-right: 0;
+    }
+
+    .hero-image {
+        margin-top: 20px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
 }
