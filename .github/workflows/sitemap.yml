@@ -19,11 +19,11 @@ jobs:
       - name: Generate Sitemap
         uses: cicirello/generate-sitemap@v1.10.1
         with:
+          entryPoint: 'https://srvrpc.com'
           path-to-root: './'
-          base-url-path: 'https://srvrpc.com'
-          sitemap-path: 'sitemap.xml'
-          include-html: 'true'
+          include-html: true
           sitemap-format: 'xml'
+          args: '--output-folder . --sitemap-filename sitemap.xml'
 
       # Step 3: Commit and push the sitemap.xml file
       - name: Commit sitemap.xml
