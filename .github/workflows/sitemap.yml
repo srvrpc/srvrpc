@@ -13,23 +13,24 @@ jobs:
     steps:
       # Step 1: Checkout the repository
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Step 2: Generate the sitemap
       - name: Generate Sitemap
         uses: cicirello/generate-sitemap@v1.10.1
         with:
-          starting-url: 'https://srvrpc.com'
+          path-to-root: './'
+          base-url-path: 'https://srvrpc.com'
           sitemap-path: 'sitemap.xml'
-          options: '--pretty-print'
+          include-html: 'true'
+          sitemap-format: 'xml'
 
       # Step 3: Commit and push the sitemap.xml file
       - name: Commit sitemap.xml
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Auto-generate sitemap
           file_pattern: sitemap.xml
-          branch: main  # Replace with your default branch if different
+          branch: main  # Replace with your default branch
           commit_user_name: GitHub Action
           commit_user_email: action@github.com
-          github_token: ${{ secrets.ACTIONS_TOKEN }}
