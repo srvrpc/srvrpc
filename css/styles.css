@@ -61,7 +61,7 @@ nav ul li a:hover {
 /* Content area styling */
 main {
     max-width: 960px;
-    margin: 80px auto 0 auto; /* Adjusted top margin to account for fixed header */
+    margin: 120px auto 0 auto; /* Adjusted top margin to account for fixed header */
     padding: 20px;
     background-color: #FFFFFF;
 }
@@ -121,5 +121,9 @@ a:hover {
 @media (max-width: 768px) {
     nav ul li {
         margin: 0 10px;
+    }
+
+    main {
+        margin-top: 150px; /* Adjust this value if the header height changes on mobile */
     }
 }
