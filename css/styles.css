@@ -224,3 +224,52 @@ a:hover {
     margin: 1em 0;
     border: 1px solid #A2A9B1;
 }
+/* Center the table on the page */
+table {
+    margin: auto;
+    width: 100%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Wikipedia-style table header */
+th {
+    background-color: #eaecf0;
+    color: #222;
+    font-weight: bold;
+    padding: 0.5em;
+    border: 1px solid #a2a9b1;
+    text-align: left;
+}
+
+/* Wikipedia-style table data */
+td {
+    padding: 0.5em;
+    border: 1px solid #a2a9b1;
+    vertical-align: top;
+}
+
+/* Alternating row colors like Wikipedia */
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Make the table responsive */
+@media screen and (max-width: 600px) {
+    table {
+        width: 100%;
+        font-size: 12px;
+    }
+    
+    th, td {
+        padding: 0.4em;
+        font-size: 12px;
+    }
+    
+    th, td {
+        word-wrap: break-word;
+    }
+}
