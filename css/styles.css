@@ -329,15 +329,20 @@ article.blog-post-content {
     padding: 20px; /* Add padding for better readability */
 }
 
-/* Center-align titles on individual blog posts */
-article.blog-post-content h1, 
+/* Center-align only h1 titles on individual blog posts */
+article.blog-post-content h1 {
+    text-align: center;
+}
+
+/* Ensure other headings are left-aligned */
 article.blog-post-content h2, 
 article.blog-post-content h3, 
 article.blog-post-content h4, 
 article.blog-post-content h5, 
 article.blog-post-content h6 {
-    text-align: center;
+    text-align: left;
 }
+
 
 /* Center-align publication date on individual blog posts */
 article.blog-post-content .post-date {
