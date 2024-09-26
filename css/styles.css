@@ -347,18 +347,18 @@ article.blog-post-content .post-date {
 
 /* Adjust spacing between paragraphs */
 article.blog-post-content p {
-    margin-bottom: 1.2em; /* Increase space between paragraphs */
+    margin-bottom: 1.5em; /* Increase space between paragraphs */
 }
 
 /* Adjust spacing between list items */
 article.blog-post-content ul, 
 article.blog-post-content ol {
-    margin-bottom: 1.2em; /* Increase space below lists */
+    margin-bottom: 1.5em; /* Increase space below lists */
 }
 
 article.blog-post-content ul li,
 article.blog-post-content ol li {
-    margin-bottom: 0.75em; /* Increased space between list items */
+    margin-bottom: 1em; /* Increased space between list items */
 }
 
 /* Ensure images within blog posts have proper spacing */
