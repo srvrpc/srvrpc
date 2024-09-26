@@ -1,6 +1,9 @@
+/* Importing Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
 /* General body styling */
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Merriweather', 'Georgia', serif;
     background-color: #FFFFFF;
     margin: 0;
     padding: 0;
