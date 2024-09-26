@@ -282,8 +282,8 @@ a:hover {
     border-bottom: 1px solid #ddd; /* Separation line */
     margin-bottom: 10px; /* Space below the image */
     border-radius: 5px 5px 0 0; /* Rounded top corners */
-    object-fit: cover; /* Ensure image covers the area */
-    max-height: 200px; /* Optional: limit image height */
+    object-fit: contain; /* Show entire image without cropping */
+    /* Removed max-height to allow full image visibility */
 }
 
 /* Blog Title Styling */
@@ -368,7 +368,8 @@ article.blog-post-content img {
     margin: 1.5em 0; /* Add vertical spacing around images */
     border: 1px solid #A2A9B1;
     border-radius: 5px;
-    object-fit: cover;
+    object-fit: contain; /* Show entire image without cropping */
+    /* Removed max-height to allow full image visibility */
 }
 
 /* Responsive Adjustments */
