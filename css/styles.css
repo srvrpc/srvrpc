@@ -1,5 +1,6 @@
 /* Importing Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
 /* General body styling */
 body {
@@ -131,28 +132,73 @@ main {
     margin-bottom: 1em;
 }
 
-/* Typography */
+/* Typography for Headings */
 h1, h2, h3, h4, h5, h6 {
-    color: #202122;
-    font-weight: normal;
-    margin: 1em 0 0.5em;
+    font-family: 'Roboto', 'Arial', sans-serif; /* Sans-serif for headings */
+    color: #202122; /* Dark gray color for headings */
+    font-weight: 700; /* Bold weight for emphasis */
+    margin: 1em 0 0.5em; /* Top and bottom margins for spacing */
+    line-height: 1.2; /* Tight line height for compact headings */
 }
 
+/* Specific Font Sizes for Each Heading Level */
 h1 {
-    font-size: 1.8em;
+    font-size: 2em; /* Larger font size for main headings */
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 1.75em;
 }
 
 h3 {
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
-p {
-    margin: 0 0 1em;
+h4 {
+    font-size: 1.25em;
 }
+
+h5 {
+    font-size: 1.1em;
+}
+
+h6 {
+    font-size: 1em;
+}
+
+/* Optional: Underline Headings for Academic Style */
+h1, h2, h3 {
+    border-bottom: 1px solid #A2A9B1; /* Light gray underline */
+    padding-bottom: 0.3em; /* Space between text and underline */
+}
+
+/* Responsive Adjustments for Headings */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    h2 {
+        font-size: 1.75em;
+    }
+    
+    h3 {
+        font-size: 1.5em;
+    }
+    
+    h4 {
+        font-size: 1.25em;
+    }
+    
+    h5 {
+        font-size: 1.1em;
+    }
+    
+    h6 {
+        font-size: 0.9em;
+    }
+}
+
 
 /* Links */
 a {
