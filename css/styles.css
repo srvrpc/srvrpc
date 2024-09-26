@@ -317,3 +317,81 @@ tr:nth-child(even) {
         word-wrap: break-word;
     }
 }
+/* Blog Grid Container */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; /* Space between tiles */
+    padding: 20px; /* Padding around the grid */
+    max-width: 1200px; /* Maximum width for large screens */
+    margin: 0 auto; /* Center the grid */
+}
+
+/* Blog Post Tile */
+.blog-post {
+    background-color: #f9f9f9; /* Light gray background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Slightly rounded corners */
+    padding: 15px; /* Inner padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure tiles are of equal height */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth hover transitions */
+}
+
+/* Hover Effect on Blog Post Tile */
+.blog-post:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Cover Image Styling */
+.blog-post .post-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd; /* Separation line */
+    margin-bottom: 10px; /* Space below the image */
+    border-radius: 5px 5px 0 0; /* Rounded top corners */
+}
+
+/* Post Numbering Styling */
+.blog-post .post-number {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #0645AD; /* Wikipedia-like blue */
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Blog Title Styling */
+.blog-post h2 {
+    font-size: 1.4em;
+    margin: 10px 0;
+}
+
+.blog-post h2 a {
+    color: #0645AD; /* Wikipedia-like blue */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blog-post h2 a:hover {
+    color: #0B0080; /* Darker blue on hover */
+    text-decoration: underline;
+}
+
+/* Post Date Styling */
+.blog-post .post-date {
+    font-size: 0.9em;
+    color: #555555;
+    margin-bottom: 10px;
+}
+
+/* Post Summary Styling */
+.blog-post .post-summary {
+    flex-grow: 1; /* Pushes content to fill the tile */
+    font-size: 1em;
+    color: #202122;
+    line-height: 1.6;
+}
