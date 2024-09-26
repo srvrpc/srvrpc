@@ -2,12 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
+/* Apply box-sizing globally */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 /* General body styling */
 body {
     font-family: 'Merriweather', 'Georgia', serif;
     background-color: #FFFFFF;
-    margin: 0;
-    padding: 0;
     color: #202122;
     line-height: 1.6;
 }
@@ -64,7 +69,7 @@ nav ul li a:hover {
 
 /* Hero section styling */
 #hero {
-    padding: 20px 20px 20px 20px; /* Reduced top padding */
+    padding: 20px; /* Reduced top padding */
     background-color: #FFFFFF;
 }
 
@@ -124,14 +129,6 @@ main {
     margin-top: 0;
 }
 
-/* Post date styling */
-.post-date {
-    text-align: center;
-    font-size: 0.9em;
-    color: #555555;
-    margin-bottom: 1em;
-}
-
 /* Typography for Headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', 'Arial', sans-serif; /* Sans-serif for headings */
@@ -166,7 +163,6 @@ h6 {
     font-size: 1em;
 }
 
-
 /* Responsive Adjustments for Headings */
 @media (max-width: 768px) {
     h1 {
@@ -193,7 +189,6 @@ h6 {
         font-size: 0.9em;
     }
 }
-
 
 /* Links */
 a {
@@ -255,68 +250,8 @@ a:hover {
     margin: 0 auto;   /* Center the content */
 }
 
-/* Blog Post Styling */
-.post-date {
-    font-size: 0.9em;
-    color: #555555;
-    margin-bottom: 1em;
-}
+/* Removed conflicting general .post-date and .post-image styles */
 
-.post-image {
-    max-width: 100%;
-    height: auto;
-    margin: 1em 0;
-    border: 1px solid #A2A9B1;
-}
-/* Center the table on the page */
-table {
-    margin: auto;
-    width: 100%;
-    max-width: 1000px;
-    border-collapse: collapse;
-    font-family: sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-/* Wikipedia-style table header */
-th {
-    background-color: #eaecf0;
-    color: #222;
-    font-weight: bold;
-    padding: 0.5em;
-    border: 1px solid #a2a9b1;
-    text-align: center;
-}
-
-/* Wikipedia-style table data */
-td {
-    padding: 0.5em;
-    border: 1px solid #a2a9b1;
-    vertical-align: middle;
-}
-
-/* Alternating row colors like Wikipedia */
-tr:nth-child(even) {
-    background-color: #f8f9fa;
-}
-
-/* Make the table responsive */
-@media screen and (max-width: 600px) {
-    table {
-        width: 100%;
-        font-size: 12px;
-    }
-    
-    th, td {
-        padding: 0.4em;
-        font-size: 12px;
-    }
-    
-    th, td {
-        word-wrap: break-word;
-    }
-}
 /* Blog Grid Container */
 .blog-grid {
     display: grid;
@@ -336,7 +271,7 @@ tr:nth-child(even) {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     display: flex;
     flex-direction: column;
-    height: 100%; /* Ensure tiles are of equal height */
+    /* Removed height: 100%; to prevent overlapping */
     transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth hover transitions */
 }
 
@@ -353,6 +288,8 @@ tr:nth-child(even) {
     border-bottom: 1px solid #ddd; /* Separation line */
     margin-bottom: 10px; /* Space below the image */
     border-radius: 5px 5px 0 0; /* Rounded top corners */
+    object-fit: cover; /* Ensure image covers the area */
+    max-height: 200px; /* Optional: limit image height */
 }
 
 /* Blog Title Styling */
@@ -385,4 +322,31 @@ tr:nth-child(even) {
     font-size: 1em;
     color: #202122;
     line-height: 1.6;
+}
+
+/* Removed table styling to prevent conflicts */
+/* If you still need table styles for other pages, consider scoping them using a parent class or ID */
+
+/* Example: Scoped Table Styles */
+/*
+.blog-page table {
+    ... table styles ...
+}
+*/
+
+/* Responsive Adjustments */
+@media screen and (max-width: 600px) {
+    table {
+        width: 100%;
+        font-size: 12px;
+    }
+    
+    th, td {
+        padding: 0.4em;
+        font-size: 12px;
+    }
+    
+    th, td {
+        word-wrap: break-word;
+    }
 }
