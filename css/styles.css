@@ -163,6 +163,7 @@ h6 {
     font-size: 1em;
 }
 
+
 /* Responsive Adjustments for Headings */
 @media (max-width: 768px) {
     h1 {
@@ -189,6 +190,7 @@ h6 {
         font-size: 0.9em;
     }
 }
+
 
 /* Links */
 a {
@@ -251,6 +253,7 @@ a:hover {
 }
 
 /* Removed conflicting general .post-date and .post-image styles */
+/* These styles are now scoped within .blog-post */
 
 /* Blog Grid Container */
 .blog-grid {
@@ -296,6 +299,7 @@ a:hover {
 .blog-post h2 {
     font-size: 1.4em;
     margin: 10px 0;
+    text-align: center; /* Center-align the title */
 }
 
 .blog-post h2 a {
@@ -314,6 +318,7 @@ a:hover {
     font-size: 0.9em;
     color: #555555;
     margin-bottom: 10px;
+    text-align: center; /* Center-align the publication date */
 }
 
 /* Post Summary Styling */
