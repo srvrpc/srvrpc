@@ -355,15 +355,6 @@ tr:nth-child(even) {
     border-radius: 5px 5px 0 0; /* Rounded top corners */
 }
 
-/* Post Numbering Styling */
-.blog-post .post-number {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #0645AD; /* Wikipedia-like blue */
-    margin-bottom: 10px;
-    display: block;
-}
-
 /* Blog Title Styling */
 .blog-post h2 {
     font-size: 1.4em;
