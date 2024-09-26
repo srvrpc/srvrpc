@@ -123,12 +123,6 @@ main {
     background-color: #FFFFFF;
 }
 
-/* Center-align the post title */
-.post-title {
-    text-align: center;
-    margin-top: 0;
-}
-
 /* Typography for Headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', 'Arial', sans-serif; /* Sans-serif for headings */
@@ -163,7 +157,6 @@ h6 {
     font-size: 1em;
 }
 
-
 /* Responsive Adjustments for Headings */
 @media (max-width: 768px) {
     h1 {
@@ -190,7 +183,6 @@ h6 {
         font-size: 0.9em;
     }
 }
-
 
 /* Links */
 a {
@@ -236,24 +228,23 @@ a:hover {
 }
 
 /* Blog Page Styling */
-/* List styling in blog page */
-#blog-contents ul {
-    list-style-type: disc; /* Use disc bullets, similar to Wikipedia */
-    padding-left: 20px;    /* Indent the list */
-}
-
-#blog-contents li {
-    margin-bottom: 0.5em;  /* Space between list items */
-}
-
 /* Ensure blog contents are properly aligned */
 #blog-contents {
     max-width: 800px; /* Adjust as needed */
     margin: 0 auto;   /* Center the content */
+    padding: 20px; /* Add padding for better readability */
 }
 
-/* Removed conflicting general .post-date and .post-image styles */
-/* These styles are now scoped within .blog-post */
+/* List styling in blog page */
+#blog-contents ul {
+    list-style-type: disc; /* Use disc bullets, similar to Wikipedia */
+    padding-left: 20px;    /* Indent the list */
+    margin-bottom: 1em;    /* Space below the list */
+}
+
+#blog-contents li {
+    margin-bottom: 0.75em;  /* Increased space between list items */
+}
 
 /* Blog Grid Container */
 .blog-grid {
@@ -327,20 +318,62 @@ a:hover {
     font-size: 1em;
     color: #202122;
     line-height: 1.6;
+    margin-bottom: 10px; /* Add space below summary */
 }
 
-/* Removed table styling to prevent conflicts */
-/* If you still need table styles for other pages, consider scoping them using a parent class or ID */
-
-/* Example: Scoped Table Styles */
-/*
-.blog-page table {
-    ... table styles ...
+/* Individual Blog Post Page Styling */
+/* Targeting individual blog post content */
+article.blog-post-content {
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto;   /* Center the content */
+    padding: 20px; /* Add padding for better readability */
 }
-*/
+
+/* Center-align titles on individual blog posts */
+article.blog-post-content h1, 
+article.blog-post-content h2, 
+article.blog-post-content h3, 
+article.blog-post-content h4, 
+article.blog-post-content h5, 
+article.blog-post-content h6 {
+    text-align: center;
+}
+
+/* Center-align publication date on individual blog posts */
+article.blog-post-content .post-date {
+    text-align: center;
+    margin-bottom: 1.5em; /* Increase space below date */
+}
+
+/* Adjust spacing between paragraphs */
+article.blog-post-content p {
+    margin-bottom: 1.2em; /* Increase space between paragraphs */
+}
+
+/* Adjust spacing between list items */
+article.blog-post-content ul, 
+article.blog-post-content ol {
+    margin-bottom: 1.2em; /* Increase space below lists */
+}
+
+article.blog-post-content ul li,
+article.blog-post-content ol li {
+    margin-bottom: 0.75em; /* Increased space between list items */
+}
+
+/* Ensure images within blog posts have proper spacing */
+article.blog-post-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 1.5em 0; /* Add vertical spacing around images */
+    border: 1px solid #A2A9B1;
+    border-radius: 5px;
+    object-fit: cover;
+}
 
 /* Responsive Adjustments */
 @media screen and (max-width: 600px) {
+    /* Adjust table styles if needed */
     table {
         width: 100%;
         font-size: 12px;
