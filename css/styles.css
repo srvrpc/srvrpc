@@ -375,6 +375,7 @@ article.blog-post-content img {
     border-radius: 5px;
     object-fit: contain; /* Show entire image without cropping */
     /* Removed max-height to allow full image visibility */
+    /* Removed max-height to allow full image visibility */
 }
 
 /* Responsive Adjustments */
@@ -393,4 +394,43 @@ article.blog-post-content img {
     th, td {
         word-wrap: break-word;
     }
+} 
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: 1em;
+    line-height: 1.4;
+    color: #202122;
+}
+
+th, td {
+    border: 1px solid #A2A9B1;
+    padding: 8px 12px;
+}
+
+th {
+    background-color: #f2f2f2;
+    text-align: center;
+    font-weight: bold;
+}
+
+td {
+    text-align: left;
+}
+
+/* Right-align numeric table cells */
+td.numeric {
+    text-align: right;
+}
+
+/* Optional: Zebra striping for table rows */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
 }
