@@ -251,7 +251,7 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px; /* Space between tiles */
-    padding: 20px; /* Padding around the grid */
+    padding: 0; /* Removed padding to fix the centering issue */
     max-width: 1200px; /* Maximum width for large screens */
     margin: 0 auto; /* Center the grid */
 }
@@ -274,6 +274,7 @@ a:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px);
 }
+
 
 /* Cover Image Styling */
 .blog-post .post-image {
