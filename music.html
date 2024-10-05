@@ -1,19 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F86L82QNKZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-F86L82QNKZ');
-</script>
-    <link rel="icon" href="assets/images/favicon.png" type="image/png">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sreerama Varma Raja P C</title>
+    <title>My Music - Sreerama Varma Raja P C</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -22,15 +11,220 @@
         <nav>
             <ul>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="music.html">My Music</a></li>
+                <li><a href="music.html" class="active">My Music</a></li>
                 <li><a href="journey.html">My Journey</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-<main>
-    <div class="empty-space"></div>
-</main>
-    
+    <main>
+        <div class="music-library" id="music-library">
+            <h1>My Music Library</h1>
+            <!-- Tracks will be inserted here by JavaScript -->
+        </div>
+
+        <div class="queue-container" id="queue-container" style="display: none;">
+            <h2>Up Next</h2>
+            <div class="queue" id="queue">
+                <!-- Queue items will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Player Controls -->
+        <div class="player-controls" id="player-controls" style="display: none;">
+            <button id="prev-btn">Prev</button>
+            <button id="play-pause-btn">Play</button>
+            <button id="next-btn">Next</button>
+            <div class="current-track" id="current-track">No track playing</div>
+        </div>
+    </main>
+
+    <!-- Include the JavaScript for the music player -->
+    <script>
+        // Music Player JavaScript Code
+
+        // Define your tracks here
+        const tracks = [
+            {
+                title: "Last Bus",
+                artist: "Sreerama Varma Raja P C",
+                year: "2023",
+                description: "An original composition capturing the mood of the last bus journey.",
+                file: "assets/audio/last-bus.mp3"
+            }
+            // Add more tracks here if you have them
+        ];
+
+        // Sort tracks by year (newest first)
+        tracks.sort((a, b) => b.year - a.year);
+
+        const musicLibrary = document.getElementById('music-library');
+        const queueContainer = document.getElementById('queue-container');
+        const queueElement = document.getElementById('queue');
+        const playerControls = document.getElementById('player-controls');
+        const currentTrackElement = document.getElementById('current-track');
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        let audio = new Audio();
+        let queue = [];
+        let currentTrackIndex = -1;
+
+        // Function to render the music library
+        function renderMusicLibrary() {
+            tracks.forEach((track, index) => {
+                const trackElement = document.createElement('div');
+                trackElement.classList.add('track');
+
+                trackElement.innerHTML = `
+                    <div class="track-info">
+                        <div class="track-title">${track.title}</div>
+                        <div class="track-meta">${track.artist} | ${track.year}</div>
+                        <div class="track-description">${track.description}</div>
+                    </div>
+                    <button class="add-to-queue">Add to Queue</button>
+                `;
+
+                // Play track on click
+                trackElement.addEventListener('click', () => {
+                    addToQueue(index, true);
+                });
+
+                // Add to queue on button click
+                trackElement.querySelector('.add-to-queue').addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    addToQueue(index);
+                });
+
+                musicLibrary.appendChild(trackElement);
+            });
+        }
+
+        // Function to add track to queue
+        function addToQueue(trackIndex, playNow = false) {
+            queue.push(trackIndex);
+            renderQueue();
+            if (playNow || currentTrackIndex === -1) {
+                playTrack(queue[0]);
+            }
+        }
+
+        // Function to render the queue
+        function renderQueue() {
+            queueContainer.style.display = queue.length > 0 ? 'block' : 'none';
+            queueElement.innerHTML = '';
+
+            queue.forEach((trackIndex, index) => {
+                const track = tracks[trackIndex];
+                const queueItem = document.createElement('div');
+                queueItem.classList.add('queue-item');
+
+                queueItem.innerHTML = `
+                    <span class="move-handle">≡</span>
+                    <div class="queue-title">${track.title} - ${track.artist}</div>
+                    <button class="remove-from-queue">Remove</button>
+                `;
+
+                // Remove from queue
+                queueItem.querySelector('.remove-from-queue').addEventListener('click', () => {
+                    queue.splice(index, 1);
+                    renderQueue();
+                });
+
+                queueElement.appendChild(queueItem);
+            });
+
+            // Initialize drag and drop for queue reordering
+            initQueueDragAndDrop();
+        }
+
+        // Function to play a track
+        function playTrack(trackIndex) {
+            currentTrackIndex = trackIndex;
+            const track = tracks[trackIndex];
+            audio.src = track.file;
+            audio.play();
+            playerControls.style.display = 'flex';
+            currentTrackElement.textContent = `${track.title} - ${track.artist}`;
+            playPauseBtn.textContent = 'Pause';
+        }
+
+        // Play/Pause Button
+        playPauseBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.textContent = 'Pause';
+            } else {
+                audio.pause();
+                playPauseBtn.textContent = 'Play';
+            }
+        });
+
+        // Next Button
+        nextBtn.addEventListener('click', () => {
+            if (queue.length > 0) {
+                queue.shift(); // Remove the current track
+                renderQueue();
+                if (queue.length > 0) {
+                    playTrack(queue[0]);
+                } else {
+                    audio.pause();
+                    playerControls.style.display = 'none';
+                }
+            }
+        });
+
+        // Previous Button
+        prevBtn.addEventender('click', () => {
+            // Implement if needed
+        });
+
+        // Auto-play next track when current ends
+        audio.addEventListener('ended', () => {
+            nextBtn.click();
+        });
+
+        // Initialize the music library
+        renderMusicLibrary();
+
+        // Function to enable drag and drop reordering of the queue
+        function initQueueDragAndDrop() {
+            const queueItems = document.querySelectorAll('.queue-item');
+            let dragSrcEl = null;
+
+            queueItems.forEach(function(item) {
+                item.setAttribute('draggable', true);
+
+                item.addEventListener('dragstart', function(e) {
+                    dragSrcEl = this;
+                    e.dataTransfer.effectAllowed = 'move';
+                    e.dataTransfer.setData('text/html', this.innerHTML);
+                });
+
+                item.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                    e.dataTransfer.dropEffect = 'move';
+                    return false;
+                });
+
+                item.addEventListener('drop', function(e) {
+                    e.stopPropagation();
+                    if (dragSrcEl != this) {
+                        const queueItemsArray = Array.from(queueElement.children);
+                        const fromIndex = queueItemsArray.indexOf(dragSrcEl);
+                        const toIndex = queueItemsArray.indexOf(this);
+
+                        // Swap elements in the queue array
+                        const temp = queue[fromIndex];
+                        queue[fromIndex] = queue[toIndex];
+                        queue[toIndex] = temp;
+                        renderQueue();
+                    }
+                    return false;
+                });
+            });
+        }
+    </script>
 </body>
 </html>
