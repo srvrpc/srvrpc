@@ -1,2 +1,4 @@
-127.0.0.1 - - [25/Jan/2026 10:36:55] "GET /blog.html HTTP/1.1" 200 -
-127.0.0.1 - - [25/Jan/2026 10:36:55] "GET /css/styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [25/Jan/2026 15:25:36] "GET /photographs.html HTTP/1.1" 200 -
+127.0.0.1 - - [25/Jan/2026 15:25:36] "GET /css/styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [25/Jan/2026 15:25:36] "GET /js/script.js HTTP/1.1" 200 -
+127.0.0.1 - - [25/Jan/2026 15:25:36] "GET /assets/images/photographs/DSC00003.webp HTTP/1.1" 200 -
