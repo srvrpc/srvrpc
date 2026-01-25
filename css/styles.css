@@ -693,10 +693,6 @@ input[type="submit"]:hover {
    14. UTILITY CLASSES
    ========================================================================== */
 
-.empty-space {
-    display: none;
-}
-
 .sr-only {
     position: absolute;
     width: 1px;
