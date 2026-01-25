@@ -14,6 +14,9 @@ jobs:
       # Step 1: Checkout the repository
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main  # Replace with your default branch
 
       # Step 2: Generate the sitemap
       - name: Generate Sitemap
