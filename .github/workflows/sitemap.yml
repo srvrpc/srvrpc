@@ -3,7 +3,9 @@ name: Generate Sitemap
 on:
   push:
     branches:
-      - main  # Replace with your default branch if different
+      - main
+    paths:
+      - '**/*.html'
   workflow_dispatch:
 
 jobs:
@@ -33,6 +35,6 @@ jobs:
         with:
           commit_message: Auto-generate sitemap
           file_pattern: sitemap.xml
-          branch: main  # Replace with your default branch
+          branch: main
           commit_user_name: GitHub Action
           commit_user_email: action@github.com
