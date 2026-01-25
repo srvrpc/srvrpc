@@ -11,16 +11,19 @@ The website contains the following core sections:
    - Introduction, expertise, numbers, and client highlights.
    - Contact details are provided here as well.
 
-2. **My Journey** (`journey.html`): 
-   - A timeline of my career, showcasing key milestones and experiences.
-
-3. **My Music** (`music.html`): 
+2. **My Music** (`music.html`):
    - A showcase of the music I have created.
 
-4. **Blog** (`blog.html`): 
+3. **Photographs** (`photographs.html`):
+   - A collection of my photographs.
+
+4. **Research** (`research.html`):
+   - A page dedicated to my research work and publications.
+
+5. **Blog** (`blog.html`):
    - A list of my blog posts where I share thoughts, insights, and updates. Each post is a separate HTML file inside the `blog/` directory.
 
-5. **Contact** (`contact.html`): 
+6. **Contact** (`contact.html`):
    - A dedicated page for contacting me.
 
 ## Repository Structure
@@ -30,8 +33,9 @@ The repository is structured as follows:
 ```
 srvrpc/
 ├── index.html          # Home page
-├── journey.html        # My Journey page (Timeline)
 ├── music.html          # My Music page (Showcase music)
+├── photographs.html    # Photographs page
+├── research.html       # Research page
 ├── blog.html           # Blog listing page
 ├── contact.html        # Contact page
 ├── blog/               # Folder for individual blog posts
