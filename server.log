@@ -1,4 +1,5 @@
-127.0.0.1 - - [25/Jan/2026 15:25:36] "GET /photographs.html HTTP/1.1" 200 -
-127.0.0.1 - - [25/Jan/2026 15:25:36] "GET /css/styles.css HTTP/1.1" 200 -
-127.0.0.1 - - [25/Jan/2026 15:25:36] "GET /js/script.js HTTP/1.1" 200 -
-127.0.0.1 - - [25/Jan/2026 15:25:36] "GET /assets/images/photographs/DSC00003.webp HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jan/2026 11:00:02] "GET /blog/obsidian-md-wiki.html HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jan/2026 11:00:02] "GET /assets/images/cover-obsidian-md.webp HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jan/2026 11:00:02] "GET /css/wikipedia.css HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jan/2026 11:00:02] "GET /js/script.js HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jan/2026 11:00:02] "GET /assets/videos/obsidian-md.mp4 HTTP/1.1" 200 -

@@ -28,8 +28,14 @@ body {
     width: var(--panel-width);
     flex-shrink: 0;
     padding: 0 0.5em;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
     font-size: 0.9em;
+    z-index: 100;
+    background-color: var(--wiki-bg);
 }
 
 #mw-panel .portal {
@@ -110,6 +116,8 @@ body {
     display: flex;
     flex-direction: column;
     min-width: 0; /* Allow shrinking */
+    margin-left: var(--panel-width);
+    width: auto;
 }
 
 /* Content Area */
@@ -423,6 +431,11 @@ body {
         flex-direction: column;
     }
     #mw-panel {
+        position: relative;
+        top: auto;
+        left: auto;
+        height: auto;
+        overflow-y: visible;
         width: 100%;
         padding: 0;
         border-bottom: 1px solid #c8ccd1;
@@ -432,6 +445,7 @@ body {
         flex-wrap: wrap;
         justify-content: space-around;
         background: #f8f9fa;
+        z-index: auto;
     }
     #mw-panel .portal {
         margin: 0.5em;
@@ -442,6 +456,10 @@ body {
     }
     #mw-panel h3 {
         cursor: pointer;
+    }
+
+    .mw-body-wrapper {
+        margin-left: 0;
     }
 
     #p-logo {
