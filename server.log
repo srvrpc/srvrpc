@@ -1,16 +1,13 @@
-127.0.0.1 - - [03/Feb/2026 01:05:48] "GET /index.html HTTP/1.1" 200 -
-127.0.0.1 - - [03/Feb/2026 01:05:49] "GET /css/styles.css HTTP/1.1" 200 -
-127.0.0.1 - - [03/Feb/2026 01:05:49] "GET /js/script.js HTTP/1.1" 200 -
-127.0.0.1 - - [03/Feb/2026 01:05:49] "GET /assets/images/profile.webp HTTP/1.1" 200 -
-127.0.0.1 - - [03/Feb/2026 01:05:51] "GET /blog/wikipedia-template.html HTTP/1.1" 200 -
-127.0.0.1 - - [03/Feb/2026 01:05:51] code 404, message File not found
-127.0.0.1 - - [03/Feb/2026 01:05:51] "GET /assets/images/cover-default.webp HTTP/1.1" 404 -
-127.0.0.1 - - [03/Feb/2026 01:05:51] "GET /css/wikipedia.css HTTP/1.1" 200 -
-127.0.0.1 - - [03/Feb/2026 01:07:19] "GET /index.html HTTP/1.1" 200 -
-127.0.0.1 - - [03/Feb/2026 01:07:19] "GET /css/styles.css HTTP/1.1" 200 -
-127.0.0.1 - - [03/Feb/2026 01:07:19] "GET /js/script.js HTTP/1.1" 200 -
-127.0.0.1 - - [03/Feb/2026 01:07:19] "GET /assets/images/profile.webp HTTP/1.1" 200 -
-127.0.0.1 - - [03/Feb/2026 01:07:21] "GET /blog/wikipedia-template.html HTTP/1.1" 200 -
-127.0.0.1 - - [03/Feb/2026 01:07:21] "GET /css/wikipedia.css HTTP/1.1" 200 -
-127.0.0.1 - - [03/Feb/2026 01:07:21] code 404, message File not found
-127.0.0.1 - - [03/Feb/2026 01:07:21] "GET /assets/images/cover-default.webp HTTP/1.1" 404 -
+127.0.0.1 - - [03/Feb/2026 02:10:37] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [03/Feb/2026 02:10:37] "GET /css/styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Feb/2026 02:10:37] "GET /js/script.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Feb/2026 02:10:37] "GET /css/fonts.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Feb/2026 02:10:37] "GET /assets/fonts/latin-modern/lmroman10-regular.otf HTTP/1.1" 200 -
+127.0.0.1 - - [03/Feb/2026 02:10:37] "GET /assets/fonts/latin-modern/lmsans10-regular.otf HTTP/1.1" 200 -
+127.0.0.1 - - [03/Feb/2026 02:10:37] "GET /assets/fonts/latin-modern/lmroman10-italic.otf HTTP/1.1" 200 -
+127.0.0.1 - - [03/Feb/2026 02:10:37] "GET /assets/images/profile.webp HTTP/1.1" 200 -
+127.0.0.1 - - [03/Feb/2026 02:10:39] "GET /blog/wikipedia-template.html HTTP/1.1" 200 -
+127.0.0.1 - - [03/Feb/2026 02:10:39] "GET /css/wikipedia.css HTTP/1.1" 200 -
+127.0.0.1 - - [03/Feb/2026 02:10:39] code 404, message File not found
+127.0.0.1 - - [03/Feb/2026 02:10:39] "GET /assets/images/cover-default.webp HTTP/1.1" 404 -
+127.0.0.1 - - [03/Feb/2026 02:10:39] "GET /assets/fonts/latin-modern/lmroman10-bold.otf HTTP/1.1" 200 -
