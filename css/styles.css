@@ -187,7 +187,7 @@ hr {
 
 /* Code and preformatted text */
 code, pre {
-    font-family: 'Latin Modern Mono', monospace;
+    font-family: 'Latin Modern Roman', serif;
     font-size: 0.9em;
     background-color: var(--bg-secondary);
 }
@@ -211,7 +211,7 @@ small,
 .post-date,
 .technical,
 figcaption {
-    font-family: 'Latin Modern Sans', sans-serif;
+    font-family: 'Latin Modern Roman', serif;
     font-size: 0.875rem;
     color: var(--text-meta);
 }
@@ -273,7 +273,7 @@ nav ul li {
 }
 
 nav ul li a {
-    font-family: 'Latin Modern Sans', sans-serif;
+    font-family: 'Latin Modern Roman', serif;
     font-size: 0.9rem;
     color: var(--link-color);
 }
@@ -379,7 +379,7 @@ nav ul li a.active {
 }
 
 .blog-post .post-date {
-    font-family: 'Latin Modern Sans', sans-serif;
+    font-family: 'Latin Modern Roman', serif;
     font-size: 0.8rem;
     color: var(--text-date);
     margin-bottom: 0.5em;
@@ -520,7 +520,7 @@ caption {
 }
 
 .track-meta {
-    font-family: 'Latin Modern Sans', sans-serif;
+    font-family: 'Latin Modern Roman', serif;
     font-size: 0.85em;
     color: var(--text-meta);
     margin-bottom: 0.5em;
@@ -602,7 +602,7 @@ caption {
     display: flex;
     align-items: center;
     gap: 0.75em;
-    font-family: 'Latin Modern Sans', sans-serif;
+    font-family: 'Latin Modern Roman', serif;
     font-size: 0.9em;
 }
 
@@ -658,7 +658,7 @@ figure img {
 
 figcaption {
     margin-top: 0.5em;
-    font-family: 'Latin Modern Sans', sans-serif;
+    font-family: 'Latin Modern Roman', serif;
     font-size: 0.875em;
     color: var(--text-meta);
     line-height: 1.5;
@@ -907,7 +907,7 @@ input[type="submit"]:hover {
     border-radius: 6px;
     padding: 2px;
     font-size: 0.8rem;
-    font-family: 'Latin Modern Sans', sans-serif;
+    font-family: 'Latin Modern Roman', serif;
 }
 
 .theme-switcher button {
