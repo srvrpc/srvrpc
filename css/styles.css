@@ -4,6 +4,62 @@
    ========================================================================== */
 
 /* ==========================================================================
+   0. VARIABLES & THEME
+   ========================================================================== */
+
+:root {
+    /* Light Mode (Default) */
+    --bg-main: #fff;
+    --text-main: #202122;
+    --text-heading: #000;
+    --text-secondary-dark: #333;
+    --text-tertiary: #555;
+    --text-meta: #54595d;
+    --text-date: #72777d;
+
+    --link-color: #0645ad;
+    --link-visited: #0b0080;
+    --link-active: #faa700;
+
+    --border-main: #a2a9b1;
+    --border-secondary: #c8ccd1;
+    --border-light: #eaecf0;
+
+    --bg-secondary: #f8f9fa;
+    --table-stripe: #f8f9fa;
+    --table-header: #eaecf0;
+
+    --color-danger: #d00;
+    --color-focus: #0645ad;
+}
+
+[data-theme="dark"] {
+    /* Dark Mode */
+    --bg-main: #121212;
+    --text-main: #e8eaed;
+    --text-heading: #ffffff;
+    --text-secondary-dark: #bdc1c6;
+    --text-tertiary: #9aa0a6;
+    --text-meta: #9aa0a6;
+    --text-date: #9aa0a6;
+
+    --link-color: #8ab4f8;
+    --link-visited: #c58af9;
+    --link-active: #faa700;
+
+    --border-main: #5f6368;
+    --border-secondary: #5f6368;
+    --border-light: #3c4043;
+
+    --bg-secondary: #202124;
+    --table-stripe: #202124;
+    --table-header: #3c4043;
+
+    --color-danger: #ff5252;
+    --color-focus: #8ab4f8;
+}
+
+/* ==========================================================================
    1. RESET & BASE
    ========================================================================== */
 
@@ -22,8 +78,8 @@ body {
     font-family: Georgia, Cambria, "Times New Roman", Times, serif;
     font-size: 1rem;
     line-height: 1.7;
-    color: #202122;
-    background-color: #fff;
+    color: var(--text-main);
+    background-color: var(--bg-main);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
@@ -36,7 +92,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: Georgia, Cambria, "Times New Roman", Times, serif;
     font-weight: normal;
-    color: #000;
+    color: var(--text-heading);
     line-height: 1.3;
     margin-top: 1.5em;
     margin-bottom: 0.5em;
@@ -44,13 +100,13 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: 2em;
-    border-bottom: 1px solid #a2a9b1;
+    border-bottom: 1px solid var(--border-main);
     padding-bottom: 0.25em;
 }
 
 h2 {
     font-size: 1.5em;
-    border-bottom: 1px solid #a2a9b1;
+    border-bottom: 1px solid var(--border-main);
     padding-bottom: 0.2em;
 }
 
@@ -76,12 +132,12 @@ p {
 
 /* Links - Wikipedia blue */
 a {
-    color: #0645ad;
+    color: var(--link-color);
     text-decoration: none;
 }
 
 a:visited {
-    color: #0b0080;
+    color: var(--link-visited);
 }
 
 a:hover,
@@ -90,7 +146,7 @@ a:focus {
 }
 
 a:active {
-    color: #faa700;
+    color: var(--link-active);
 }
 
 /* Lists */
@@ -107,9 +163,9 @@ li {
 blockquote {
     margin: 1.5em 2em;
     padding-left: 1em;
-    border-left: 3px solid #c8ccd1;
+    border-left: 3px solid var(--border-secondary);
     font-style: italic;
-    color: #333;
+    color: var(--text-secondary-dark);
 }
 
 blockquote cite {
@@ -117,13 +173,13 @@ blockquote cite {
     margin-top: 0.5em;
     font-style: normal;
     font-size: 0.9em;
-    color: #555;
+    color: var(--text-tertiary);
 }
 
 /* Horizontal rules */
 hr {
     border: none;
-    border-top: 1px solid #a2a9b1;
+    border-top: 1px solid var(--border-main);
     margin: 2em 0;
 }
 
@@ -131,18 +187,20 @@ hr {
 code, pre {
     font-family: "Courier New", Courier, monospace;
     font-size: 0.9em;
-    background-color: #f8f9fa;
+    background-color: var(--bg-secondary);
 }
 
 code {
     padding: 0.1em 0.3em;
+    color: var(--text-main);
 }
 
 pre {
     padding: 1em;
     overflow-x: auto;
-    border: 1px solid #c8ccd1;
+    border: 1px solid var(--border-secondary);
     margin: 1.5em 0;
+    color: var(--text-main);
 }
 
 /* Small text and metadata - Sans-serif */
@@ -153,7 +211,7 @@ small,
 figcaption {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     font-size: 0.875rem;
-    color: #54595d;
+    color: var(--text-meta);
 }
 
 /* ==========================================================================
@@ -175,7 +233,7 @@ header {
     max-width: 800px;
     margin: 0 auto;
     padding: 1.5em 1.5em 1em;
-    border-bottom: 1px solid #a2a9b1;
+    border-bottom: 1px solid var(--border-main);
 }
 
 header h1 {
@@ -186,7 +244,7 @@ header h1 {
 }
 
 header h1 a {
-    color: #000;
+    color: var(--text-heading);
     text-decoration: none;
 }
 
@@ -215,11 +273,11 @@ nav ul li {
 nav ul li a {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     font-size: 0.9rem;
-    color: #0645ad;
+    color: var(--link-color);
 }
 
 nav ul li a:visited {
-    color: #0645ad;
+    color: var(--link-color);
 }
 
 nav ul li a.active {
@@ -262,7 +320,7 @@ nav ul li a.active {
 .hero-image img {
     width: 100%;
     height: auto;
-    border: 1px solid #a2a9b1;
+    border: 1px solid var(--border-main);
 }
 
 /* ==========================================================================
@@ -288,7 +346,7 @@ nav ul li a.active {
 .blog-post {
     display: block;
     padding: 1.25em 0;
-    border-bottom: 1px solid #eaecf0;
+    border-bottom: 1px solid var(--border-light);
     background: none;
 }
 
@@ -311,24 +369,24 @@ nav ul li a.active {
 }
 
 .blog-post h2 a {
-    color: #0645ad;
+    color: var(--link-color);
 }
 
 .blog-post h2 a:visited {
-    color: #0b0080;
+    color: var(--link-visited);
 }
 
 .blog-post .post-date {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     font-size: 0.8rem;
-    color: #72777d;
+    color: var(--text-date);
     margin-bottom: 0.5em;
     text-align: left;
 }
 
 .blog-post .post-summary {
     font-size: 0.95em;
-    color: #333;
+    color: var(--text-secondary-dark);
     line-height: 1.6;
     margin: 0;
     text-align: left;
@@ -352,7 +410,7 @@ article.blog-post-content .post-date {
     text-align: left;
     margin-bottom: 2em;
     padding-bottom: 1em;
-    border-bottom: 1px solid #eaecf0;
+    border-bottom: 1px solid var(--border-light);
 }
 
 article.blog-post-content h2,
@@ -380,7 +438,7 @@ article.blog-post-content img {
     max-width: 100%;
     height: auto;
     margin: 1.5em 0;
-    border: 1px solid #a2a9b1;
+    border: 1px solid var(--border-main);
 }
 
 /* ==========================================================================
@@ -396,19 +454,24 @@ table {
 }
 
 th, td {
-    border: 1px solid #a2a9b1;
+    border: 1px solid var(--border-main);
     padding: 0.5em 0.75em;
     text-align: left;
     vertical-align: top;
 }
 
 th {
-    background-color: #eaecf0;
+    background-color: var(--table-header);
     font-weight: bold;
+    color: var(--text-main);
 }
 
 tr:nth-child(even) {
-    background-color: #f8f9fa;
+    background-color: var(--table-stripe);
+}
+
+td {
+    color: var(--text-main);
 }
 
 caption {
@@ -416,7 +479,7 @@ caption {
     text-align: left;
     font-style: italic;
     padding: 0.5em 0;
-    color: #54595d;
+    color: var(--text-meta);
 }
 
 /* ==========================================================================
@@ -435,7 +498,7 @@ caption {
 
 .track {
     padding: 1.25em 0;
-    border-bottom: 1px solid #eaecf0;
+    border-bottom: 1px solid var(--border-light);
     display: block;
     cursor: default;
 }
@@ -457,13 +520,13 @@ caption {
 .track-meta {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     font-size: 0.85em;
-    color: #54595d;
+    color: var(--text-meta);
     margin-bottom: 0.5em;
 }
 
 .track-description {
     font-size: 0.95em;
-    color: #333;
+    color: var(--text-secondary-dark);
     margin-top: 0.5em;
     font-style: italic;
 }
@@ -480,9 +543,9 @@ caption {
 }
 
 .queue {
-    border: 1px solid #a2a9b1;
+    border: 1px solid var(--border-main);
     padding: 1em;
-    background-color: #f8f9fa;
+    background-color: var(--bg-secondary);
 }
 
 .queue h2 {
@@ -495,7 +558,7 @@ caption {
     display: flex;
     align-items: center;
     padding: 0.5em 0;
-    border-bottom: 1px solid #eaecf0;
+    border-bottom: 1px solid var(--border-light);
 }
 
 .queue-item:last-child {
@@ -505,7 +568,7 @@ caption {
 .queue-item .move-handle {
     cursor: move;
     margin-right: 0.75em;
-    color: #72777d;
+    color: var(--text-date);
 }
 
 .queue-item .queue-title {
@@ -516,13 +579,13 @@ caption {
 .queue-item .remove-from-queue {
     background: none;
     border: none;
-    color: #a2a9b1;
+    color: var(--border-main);
     cursor: pointer;
     font-size: 0.85em;
 }
 
 .queue-item .remove-from-queue:hover {
-    color: #d00;
+    color: var(--color-danger);
 }
 
 /* Player controls */
@@ -531,8 +594,8 @@ caption {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #f8f9fa;
-    border-top: 1px solid #a2a9b1;
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-main);
     padding: 0.75em 1.5em;
     display: flex;
     align-items: center;
@@ -545,18 +608,19 @@ caption {
     font-family: inherit;
     font-size: 0.85em;
     padding: 0.4em 0.8em;
-    background: #fff;
-    border: 1px solid #a2a9b1;
+    background: var(--bg-main);
+    border: 1px solid var(--border-main);
     cursor: pointer;
+    color: var(--text-main);
 }
 
 .player-controls button:hover {
-    background: #eaecf0;
+    background: var(--bg-secondary);
 }
 
 .player-controls .current-track {
     flex-grow: 1;
-    color: #202122;
+    color: var(--text-main);
 }
 
 /* Native audio element */
@@ -573,7 +637,7 @@ audio {
 .photo-entry {
     margin-bottom: 4em;
     padding-bottom: 2em;
-    border-bottom: 1px solid #eaecf0;
+    border-bottom: 1px solid var(--border-light);
 }
 
 .photo-entry:last-child {
@@ -587,14 +651,14 @@ figure {
 figure img {
     max-width: 100%;
     height: auto;
-    border: 1px solid #a2a9b1;
+    border: 1px solid var(--border-main);
 }
 
 figcaption {
     margin-top: 0.5em;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     font-size: 0.875em;
-    color: #54595d;
+    color: var(--text-meta);
     line-height: 1.5;
 }
 
@@ -612,7 +676,7 @@ figcaption {
 .references {
     margin-top: 3em;
     padding-top: 1em;
-    border-top: 1px solid #a2a9b1;
+    border-top: 1px solid var(--border-main);
 }
 
 .footnotes ol,
@@ -639,8 +703,8 @@ figcaption {
 
 .toc {
     display: inline-block;
-    border: 1px solid #a2a9b1;
-    background-color: #f8f9fa;
+    border: 1px solid var(--border-main);
+    background-color: var(--bg-secondary);
     padding: 1em 1.5em;
     margin: 1em 0;
 }
@@ -675,28 +739,30 @@ textarea {
     width: 100%;
     max-width: 400px;
     padding: 0.5em;
-    border: 1px solid #a2a9b1;
-    background: #fff;
+    border: 1px solid var(--border-main);
+    background: var(--bg-main);
+    color: var(--text-main);
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
     outline: none;
-    border-color: #0645ad;
+    border-color: var(--color-focus);
 }
 
 button,
 input[type="submit"] {
     padding: 0.5em 1em;
-    background: #f8f9fa;
-    border: 1px solid #a2a9b1;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-main);
     cursor: pointer;
+    color: var(--text-main);
 }
 
 button:hover,
 input[type="submit"]:hover {
-    background: #eaecf0;
+    background: var(--border-light);
 }
 
 /* ==========================================================================
@@ -820,4 +886,53 @@ input[type="submit"]:hover {
     img, figure, table {
         page-break-inside: avoid;
     }
+}
+
+/* ==========================================================================
+   17. THEME SWITCHER
+   ========================================================================== */
+
+.theme-switcher-item {
+    margin-left: auto; /* Push to right if flex */
+    display: flex;
+    align-items: center;
+}
+
+.theme-switcher {
+    display: inline-flex;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-main);
+    border-radius: 6px;
+    padding: 2px;
+    font-size: 0.8rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.theme-switcher button {
+    background: transparent;
+    border: none;
+    padding: 2px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--text-meta);
+    font-size: inherit;
+    line-height: 1.5;
+}
+
+.theme-switcher button:hover {
+    color: var(--text-main);
+    background: transparent;
+}
+
+.theme-switcher button.active {
+    background-color: var(--bg-main);
+    color: var(--text-heading);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    font-weight: 500;
+}
+
+/* Adjustments for dark mode switcher visibility */
+[data-theme="dark"] .theme-switcher button.active {
+    background-color: #4a4a4a;
+    color: #fff;
 }
