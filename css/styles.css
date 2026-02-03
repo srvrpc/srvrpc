@@ -3,6 +3,8 @@
    A strict, text-focused design inspired by Wikipedia and LaTeX documents.
    ========================================================================== */
 
+@import url('fonts.css');
+
 /* ==========================================================================
    0. VARIABLES & THEME
    ========================================================================== */
@@ -75,7 +77,7 @@ html {
 }
 
 body {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: 'Latin Modern Roman', serif;
     font-size: 1rem;
     line-height: 1.7;
     color: var(--text-main);
@@ -90,7 +92,7 @@ body {
 
 /* Headings - Serif, normal weight (LaTeX style) */
 h1, h2, h3, h4, h5, h6 {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: 'Latin Modern Roman', serif;
     font-weight: normal;
     color: var(--text-heading);
     line-height: 1.3;
@@ -185,7 +187,7 @@ hr {
 
 /* Code and preformatted text */
 code, pre {
-    font-family: "Courier New", Courier, monospace;
+    font-family: 'Latin Modern Mono', monospace;
     font-size: 0.9em;
     background-color: var(--bg-secondary);
 }
@@ -209,7 +211,7 @@ small,
 .post-date,
 .technical,
 figcaption {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-family: 'Latin Modern Sans', sans-serif;
     font-size: 0.875rem;
     color: var(--text-meta);
 }
@@ -271,7 +273,7 @@ nav ul li {
 }
 
 nav ul li a {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-family: 'Latin Modern Sans', sans-serif;
     font-size: 0.9rem;
     color: var(--link-color);
 }
@@ -377,7 +379,7 @@ nav ul li a.active {
 }
 
 .blog-post .post-date {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-family: 'Latin Modern Sans', sans-serif;
     font-size: 0.8rem;
     color: var(--text-date);
     margin-bottom: 0.5em;
@@ -518,7 +520,7 @@ caption {
 }
 
 .track-meta {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-family: 'Latin Modern Sans', sans-serif;
     font-size: 0.85em;
     color: var(--text-meta);
     margin-bottom: 0.5em;
@@ -600,7 +602,7 @@ caption {
     display: flex;
     align-items: center;
     gap: 0.75em;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-family: 'Latin Modern Sans', sans-serif;
     font-size: 0.9em;
 }
 
@@ -656,7 +658,7 @@ figure img {
 
 figcaption {
     margin-top: 0.5em;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-family: 'Latin Modern Sans', sans-serif;
     font-size: 0.875em;
     color: var(--text-meta);
     line-height: 1.5;
@@ -905,7 +907,7 @@ input[type="submit"]:hover {
     border-radius: 6px;
     padding: 2px;
     font-size: 0.8rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-family: 'Latin Modern Sans', sans-serif;
 }
 
 .theme-switcher button {
