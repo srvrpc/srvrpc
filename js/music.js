@@ -4,7 +4,7 @@
 const tracks = [
     {
         title: "Last Bus",
-        artist: "Sreerama Varma Raja P C",
+        artist: "Sreeraman",
         year: "2023",
         description: "An original composition capturing the mood of the last bus journey.",
         file: "assets/audio/last-bus.mp3"
